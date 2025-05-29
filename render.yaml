@@ -3,7 +3,7 @@ services:
     name: ai-article-generator
     env: python
     plan: free
-    buildCommand: cd client && npm install && npm run build
+    buildCommand: ./build.sh
     startCommand: gunicorn --chdir server app:app
     envVars:
       - key: PYTHON_VERSION
