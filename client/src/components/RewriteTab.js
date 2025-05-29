@@ -7,7 +7,7 @@ import { API_BASE_URL } from '../config';
 function RewriteTab() {
   // 状態管理
   const [originalText, setOriginalText] = useState('');
-  const [selectedModel, setSelectedModel] = useState('claude');
+  const [selectedModel, setSelectedModel] = useState('gemini');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');

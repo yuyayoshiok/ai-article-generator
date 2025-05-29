@@ -7,7 +7,7 @@ import { API_BASE_URL } from '../config';
 function GenerateTab() {
   // 状態管理
   const [keyword, setKeyword] = useState('');
-  const [selectedModel, setSelectedModel] = useState('claude');
+  const [selectedModel, setSelectedModel] = useState('gemini');
   const [includeImages, setIncludeImages] = useState(true);
   const [factCheck, setFactCheck] = useState(true);
   const [loading, setLoading] = useState(false);
