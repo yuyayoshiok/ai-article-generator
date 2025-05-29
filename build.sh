@@ -5,10 +5,9 @@ echo "=== Python Build Phase ==="
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Verify gunicorn installation
-echo "=== Verifying Gunicorn Installation ==="
-python -m pip show gunicorn
-python -c "import gunicorn; print(f'Gunicorn version: {gunicorn.__version__}')"
+# Verify Flask installation
+echo "=== Verifying Flask Installation ==="
+python -c "import flask; print(f'Flask version: {flask.__version__}')"
 
 echo "=== Node.js Build Phase ==="
 # Install Node.js dependencies and build React app
