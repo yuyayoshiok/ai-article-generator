@@ -1,0 +1,32 @@
+# Render用デプロイ設定ファイル
+services:
+  # Webサービス（Flask + React）
+  - type: web
+    name: article-generator
+    env: python
+    buildCommand: |
+      # Python依存関係のインストール
+      cd server && pip install -r requirements.txt
+      # Reactアプリのビルド
+      cd ../client && npm install && npm run build
+    startCommand: cd server && gunicorn app:app
+    # 環境変数の設定
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: NODE_VERSION  
+        value: 18.17.0
+      - key: ANTHROPIC_API_KEY
+        sync: false  # 手動で設定
+      - key: GEMINI_API_KEY
+        sync: false  # 手動で設定
+      - key: UNSPLASH_ACCESS_KEY
+        sync: false  # 手動で設定
+      - key: UNSPLASH_SECRET_KEY
+        sync: false  # 手動で設定
+      - key: FLASK_ENV
+        value: production
+    # 自動デプロイ設定
+    autoDeploy: true
+    # リソース設定
+    plan: free  # 無料プランで開始
