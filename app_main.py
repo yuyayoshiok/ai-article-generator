@@ -16,7 +16,11 @@ import random
 load_dotenv()
 
 app = Flask(__name__, static_folder='client/build/static', static_url_path='/static')
-CORS(app, origins=['http://localhost:3000', 'http://localhost:5001'])
+CORS(app, origins=[
+    'http://localhost:3000', 
+    'http://localhost:5001',
+    'https://ai-article-generator-rfro.onrender.com'
+])
 
 # ログ設定
 logging.basicConfig(level=logging.INFO)
