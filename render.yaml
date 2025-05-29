@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: ./build.sh
-    startCommand: cd server && python app.py
+    startCommand: ./start_server.sh
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.5
