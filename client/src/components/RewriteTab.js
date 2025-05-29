@@ -8,16 +8,13 @@ function RewriteTab() {
   // 状態管理
   const [originalText, setOriginalText] = useState('');
   const [selectedModel, setSelectedModel] = useState('claude');
-  const [rewriteType, setRewriteType] = useState('improve');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
-  // リライトタイプの定義
-  const rewriteTypes = [
-    { id: 'improve', label: '品質向上', description: 'より読みやすく魅力的に' }
-  ];
+  // リライトタイプ（固定値）
+  const rewriteType = 'improve';
 
   // リライト処理
   const handleRewrite = async () => {
